@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.home-container {
+    width: 100%;
+    overflow: hidden;
+}
+.home-1-secton {
+    width: 100%;
+}
+.tech-header {
+    font-size: 13rem;
+    font-family: "Biennale";
+    font-weight: 100;
+    width: 100%;
+    margin-left: 7%;
+    
+}
+.o-img {
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+}
+
+.vr-img {
+    margin-left: 30%;
+    margin-top: -2%;
+    height: 500px;
+    width: 500px;
+    z-index: 100;
+    position: relative;
+
+}
+.vr-image {
+    height: 900px;
+    width: 550px;
+    z-index: 100;
+}
+
+.behind-vr-img {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(0, 0, 0);
+    z-index: 1;
+}
+
+.first-strip {
+    z-index: 2;
+    width: 200%;
+    transform-origin: left center;
+    position: relative;
+    bottom: -270px;
+    display: flex;
+    left: 0;
+    overflow: hidden;
+}
+.second-strip {
+    z-index: 2;
+    width: 200%;
+    transform-origin: left center;
+    position: relative;
+    bottom: -270px;
+    display: flex;
+    overflow: hidden;
+}
+
+.ai-tech {
+    background-color: #3c5ba4;
+    width: 400px;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strip-content-tech {
+    color: white;
+    font-weight: 100;
+    font-family: "Biennale";
+    font-size: 2rem;
+}
+
+.synth {
+    background-color: #fef86a;
+    width: 300px;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+.strip-content-syth {
+    font-weight: 100;
+    font-family: "Biennale";
+    font-size: 2.6rem;
+    margin-left: 40px;
+    z-index: 50;
+}
+.pink {
+    background-color: #e952f7;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+.des {
+    font-weight: 100;
+    font-family: "Biennale";
+    font-size: 2.6rem;
+    z-index: 50;
+    color: white;
+    margin-left: 10px;
+}
+.evo {
+    background-color: #7debf8;
+    width: 300px;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.strip-content-evo {
+    font-weight: 100;
+    font-family: "Biennale";
+    font-size: 2.3rem;
+    margin-left: 40px;
+    z-index: 50;
+}
+
+.eth {
+    background-color: #eab76a;
+    width: 250px;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strip-content-eth {
+    font-weight: 100;
+    font-family: "Biennale";
+    font-size: 2.3rem;
+    margin-left: -20px;
+    z-index: 50;
+}
+
+.home-2-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.section-2-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 9rem;
+    margin-top: 50px;
+}
+
+.supported {
+    font-size: 2.5rem;
+    width: 100%;
+    font-weight: 100;
+    font-family: "Courier New", Courier, monospace;
+    margin-bottom: 80px;
+}
+
+.supported-icon {
+    display: flex;
+    gap: 50px;
+    width: 500px;
+    justify-content: flex-start;
+}
+
+.icon-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.section-2-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 100px;
+    padding-right: 9rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    gap: 60px;
+}
+.header-right-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+.header-right-text-h {
+    font-family: "Biennale";
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+.header-right-text-p {
+    font-family: "Biennale";
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: rgba(36, 36, 36, 0.826);
+}
+.bottom-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+.bottom-right-img {
+    padding: 0 30px;
+    margin-top: -40px;
+    display: flex;
+}
+.bottom-right-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.happy-cust {
+    font-size: 1.9rem;
+    font-family: "Biennale regular";
+}
+
+.hlp-degn {
+    font-size: 1rem;
+    font-family: "Biennale light";
+}
+
+.home-section-3 {
+    display: flex;
+    width: 100%;
+}
+.section-3-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+    padding-left: 9rem;
+}
+.section-3-header-h {
+    font-family: "Biennale";
+    font-size: 4.1rem;
+    color: rgb(8, 8, 8);
+}
+
+.section-3-img {
+    width: 700px;
+    height: 700px;
+    position: relative;
+}
+
+.section-3-img canvas {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.section-3-img:hover canvas {
+    opacity: 1;
+}
+
+.section-3-img img {
+    transition: opacity 0.3s ease;
+}
+
+.section-3-img:hover img {
+    opacity: 0;
+}
+
+.section-3-header-below {
+    display: flex;
+    width: 100%;
+}
+
+.section-3-text {
+    text-align: left;
+    padding-right: 1rem;
+}
+
+.PixelAlchemy {
+    padding: 30px 30px;
+    font-family: "Biennale light";
+    font-size: 1.5rem;
+    color: rgb(8, 8, 8);
+}
+.section-3-text-header {
+    padding: 20px 30px;
+    font-family: "Biennale";
+    font-size: 4.2rem;
+}
+
+.section-3-text-main {
+    font-family: "Biennale light";
+    font-size: 1.4rem;
+    color: rgb(8, 8, 8);
+    padding: 10px 30px;
+}
