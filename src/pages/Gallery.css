@@ -1,9 +1,8 @@
-
 .gallery-container {
     width: 100%;
     min-height: 100vh;
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #686666ad 0%, #898686a5 100%);
+    background: linear-gradient(135deg, #1f1f1f 0%, #2e2e2e 100%);
     overflow-x: hidden;
 }
 
@@ -19,14 +18,16 @@
     color: #ffffff;
     margin-bottom: 1rem;
     letter-spacing: 0.2em;
+    text-transform: uppercase;
 }
 
 .gallery-subtitle {
     font-family: "Biennale light";
     font-size: 1.4rem;
-    color: #888;
+    color: #cccccc;
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Diagonal Gallery Layout */
@@ -41,14 +42,6 @@
     position: relative;
 }
 
-.diagonal-gallery-item.left-align {
-    text-align: left;
-}
-
-.diagonal-gallery-item.right-align {
-    text-align: right;
-}
-
 .diagonal-content-wrapper {
     display: flex;
     align-items: center;
@@ -56,6 +49,7 @@
     position: relative;
 }
 
+/* Align right-aligned items by reversing the flex direction */
 .diagonal-gallery-item.right-align .diagonal-content-wrapper {
     flex-direction: row-reverse;
 }
@@ -73,24 +67,24 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.diagonal-gallery-img:hover {
+.diagonal-image-container:hover .diagonal-gallery-img {
     transform: scale(1.05);
 }
 
 /* Shery.js effect styling */
-.diagonal-gallery-img canvas {
+.diagonal-image-container canvas {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.diagonal-gallery-img:hover canvas {
+.diagonal-image-container:hover canvas {
     opacity: 1;
 }
 
-.diagonal-gallery-img:hover img {
+.diagonal-image-container:hover .diagonal-gallery-img {
     opacity: 0;
 }
 
@@ -98,6 +92,14 @@
     flex: 1;
     padding: 2rem;
     color: white;
+}
+
+.diagonal-gallery-item.left-align .diagonal-text-content {
+    text-align: left;
+}
+
+.diagonal-gallery-item.right-align .diagonal-text-content {
+    text-align: right;
 }
 
 .diagonal-category {
@@ -131,74 +133,145 @@
     text-align: center;
     margin-top: 6rem;
     padding-top: 3rem;
-    border-top: 1px solid #333;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .gallery-footer-text {
     font-family: "Biennale light";
     font-size: 1.2rem;
-    color: #888;
+    color: #bbbbbb;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
 }
 
-/* Responsive Design */
+/* =================================================================== */
+/* ============== PROFESSIONAL RESPONSIVE STYLES START =============== */
+/* =================================================================== */
+
+/* ----------- 1. TABLET & SMALL DESKTOP (max-width: 1200px) ----------- */
+@media (max-width: 1200px) {
+    .diagonal-image-container {
+        flex: 0 0 450px;
+        height: 600px;
+    }
+    .diagonal-title {
+        font-size: 2.5rem;
+    }
+    .diagonal-description {
+        font-size: 1.1rem;
+    }
+}
+
+/* ----------- 2. TABLET - PORTRAIT (max-width: 1024px) ----------- */
 @media (max-width: 1024px) {
+    .gallery-container {
+        padding: 4rem 1.5rem;
+    }
+    .gallery-title {
+        font-size: 4.5rem;
+    }
+    .gallery-subtitle {
+        font-size: 1.2rem;
+    }
+
+    /* Stack image and text vertically */
     .diagonal-content-wrapper {
-        flex-direction: column !important;
-        text-align: center !important;
+        flex-direction: column !important; /* Force column layout for all items */
         gap: 2rem;
     }
 
-    .diagonal-image-container {
-        flex: none;
+    .diagonal-text-content {
+        text-align: center !important; /* Center align all text content */
         width: 100%;
-        max-width: 400px;
+        max-width: 600px;
+    }
+
+    .diagonal-image-container {
+        width: 100%;
+        max-width: 500px; /* Control max width on tablets */
+        height: 500px;
+    }
+}
+
+/* ----------- 3. MOBILE - LARGE (max-width: 768px) ----------- */
+@media (max-width: 768px) {
+    .gallery-container {
+        padding: 3rem 1rem;
+    }
+    .gallery-header {
+        margin-bottom: 4rem;
+    }
+    .gallery-title {
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+    }
+    .gallery-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .diagonal-gallery-wrapper {
+        padding: 0;
+    }
+    .diagonal-gallery-item {
+        margin-bottom: 5rem;
+    }
+
+    .diagonal-image-container {
         height: 400px;
     }
 
     .diagonal-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
-}
-
-@media (max-width: 768px) {
-    .gallery-title {
-        font-size: 4rem;
-    }
-
-    .diagonal-gallery-item {
-        margin-bottom: 4rem;
-    }
-
-    .diagonal-image-container {
-        height: 300px;
-    }
-
-    .diagonal-title {
-        font-size: 2rem;
-    }
-
     .diagonal-description {
+        font-size: 1rem;
+    }
+
+    .gallery-footer {
+        margin-top: 4rem;
+    }
+    .gallery-footer-text {
         font-size: 1rem;
     }
 }
 
-/* Custom scrollbar for smooth experience */
+/* ----------- 4. MOBILE - SMALL (max-width: 480px) ----------- */
+@media (max-width: 480px) {
+    .gallery-title {
+        font-size: 2.5rem;
+    }
+    .gallery-subtitle {
+        font-size: 1rem;
+    }
+
+    .diagonal-image-container {
+        height: 350px;
+        border-radius: 15px;
+    }
+
+    .diagonal-title {
+        font-size: 1.8rem;
+    }
+    .diagonal-category {
+        font-size: 0.9rem;
+    }
+    .diagonal-description {
+        font-size: 0.95rem;
+    }
+}
+
+/* Custom scrollbar for a consistent, smooth experience */
 ::-webkit-scrollbar {
     width: 8px;
 }
-
 ::-webkit-scrollbar-track {
     background: #1a1a1a;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #444;
     border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #666;
 }

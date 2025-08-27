@@ -11,10 +11,11 @@ html {
 
 .home-container {
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden; /* Changed from hidden to prevent horizontal scrollbars */
 }
 .home-1-secton {
     width: 100%;
+    position: relative; /* Added for positioning context */
 }
 .tech-header {
     font-size: 13rem;
@@ -22,11 +23,14 @@ html {
     font-weight: 100;
     width: 100%;
     margin-left: 7%;
+    line-height: 1; /* Added for better control */
 }
 .o-img {
     height: 170px;
     width: 170px;
     border-radius: 50%;
+    display: inline-block; /* Helps with alignment */
+    vertical-align: middle; /* Aligns images with text */
 }
 
 .vr-img {
@@ -162,17 +166,18 @@ html {
 .home-2-section {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Changed for better alignment */
     width: 100%;
+    padding: 5rem 9rem; /* Added padding here for global spacing */
 }
 .section-2-left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 100%;
-    padding-left: 9rem;
-    margin-top: 50px;
+    width: 50%;
+    padding: 0; /* Removed padding from here */
+    margin: 0;
 }
 
 .supported {
@@ -186,8 +191,9 @@ html {
 .supported-icon {
     display: flex;
     gap: 50px;
-    width: 500px;
+    width: 100%; /* Changed */
     justify-content: flex-start;
+    flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .icon-image {
@@ -195,15 +201,19 @@ html {
     width: 50px;
     border-radius: 10px;
 }
+.supported-icon-chatgpt p {
+    text-align: center;
+    margin-top: 0.5rem;
+}
 
 .section-2-right {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    width: 100%;
-    margin-top: 100px;
-    padding-right: 9rem;
+    width: 50%;
+    margin: 0; /* Removed margin */
+    padding: 0; /* Removed padding */
 }
 
 .header-right {
@@ -212,6 +222,7 @@ html {
     justify-content: flex-end;
     margin-bottom: 30px;
     gap: 60px;
+    width: 100%;
 }
 .header-right-text {
     display: flex;
@@ -262,13 +273,14 @@ html {
 .home-section-3 {
     display: flex;
     width: 100%;
+    padding: 5rem 9rem; /* Added padding here for global spacing */
 }
 .section-3-header {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 50px;
-    padding-left: 9rem;
+    margin: 0; /* Removed margin */
+    padding: 0; /* Removed padding */
 }
 .section-3-header-h {
     font-family: "Biennale";
@@ -280,6 +292,7 @@ html {
     width: 700px;
     height: 700px;
     position: relative;
+    flex-shrink: 0; /* Prevent image from shrinking in flex context */
 }
 
 .section-3-img canvas {
@@ -302,6 +315,7 @@ html {
 .section-3-header-below {
     display: flex;
     width: 100%;
+    align-items: center; /* Vertically align image and text */
 }
 
 .section-3-text {
@@ -326,4 +340,250 @@ html {
     font-size: 1.4rem;
     color: rgb(8, 8, 8);
     padding: 10px 30px;
+}
+
+/* =================================================================== */
+/* ============== PROFESSIONAL RESPONSIVE STYLES START =============== */
+/* =================================================================== */
+
+/* ----------- 1. TABLET & SMALL DESKTOP (max-width: 1200px) ----------- */
+@media (max-width: 1200px) {
+    .tech-header {
+        font-size: 10rem;
+        margin-left: 5%;
+    }
+    .o-img {
+        height: 120px;
+        width: 120px;
+    }
+    .vr-img {
+        margin-left: 25%;
+    }
+    .home-2-section,
+    .home-section-3 {
+        padding: 4rem 5rem;
+    }
+    .header-right {
+        gap: 30px;
+    }
+    .section-3-img {
+        width: 500px;
+        height: 500px;
+    }
+    .section-3-text-header {
+        font-size: 3.5rem;
+    }
+}
+
+/* ----------- 2. TABLET - PORTRAIT (max-width: 1024px) ----------- */
+@media (max-width: 1024px) {
+    .tech-header {
+        font-size: 8rem;
+        margin-left: 2rem;
+    }
+    .o-img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .vr-img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+        height: 400px;
+        left: 0;
+        right: 0;
+    }
+    .vr-image {
+        width: 450px;
+        height: auto;
+    }
+
+    /* Stack sections vertically */
+    .home-2-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 4rem 2rem;
+        gap: 4rem;
+    }
+    .section-2-left,
+    .section-2-right {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .supported-icon {
+        justify-content: center;
+    }
+    .header-right {
+        justify-content: center;
+    }
+    .bottom-right {
+        justify-content: center;
+    }
+
+    .home-section-3 {
+        padding: 4rem 2rem;
+    }
+    .section-3-header-below {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .section-3-text {
+        text-align: center;
+        padding: 0;
+    }
+    .section-3-header-h,
+    .section-3-text-header {
+        font-size: 3rem;
+    }
+}
+
+/* ----------- 3. MOBILE - LARGE (max-width: 768px) ----------- */
+@media (max-width: 768px) {
+    .tech-header {
+        font-size: 5rem;
+        margin-left: 1rem;
+        text-align: center;
+        width: auto;
+    }
+    .o-img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .vr-img {
+        width: 300px;
+        height: 300px;
+        margin-top: 1rem;
+    }
+    .vr-image {
+        width: 320px;
+    }
+
+    .behind-vr-img {
+        height: 400px;
+    }
+    .first-strip,
+    .second-strip {
+        bottom: -200px;
+    }
+    .strip-content-tech {
+        font-size: 1.5rem;
+    }
+    .strip-content-syth,
+    .des,
+    .strip-content-evo,
+    .strip-content-eth {
+        font-size: 1.8rem;
+    }
+
+    .supported {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .supported-icon {
+        gap: 20px;
+    }
+
+    .header-right-text-h {
+        font-size: 3rem;
+    }
+    .header-right-text-p {
+        font-size: 1rem;
+    }
+
+    .bottom-right {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .bottom-right-img {
+        margin-top: 0;
+    }
+
+    .section-3-header-h,
+    .section-3-text-header {
+        font-size: 2.5rem;
+    }
+    .section-3-text-main {
+        font-size: 1.1rem;
+    }
+    .section-3-img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+/* ----------- 4. MOBILE - SMALL (max-width: 480px) ----------- */
+@media (max-width: 480px) {
+    .home-container {
+        overflow-x: hidden;
+    }
+    .tech-header {
+        font-size: 3.5rem;
+    }
+    .o-img {
+        height: 45px;
+        width: 45px;
+    }
+
+    .behind-vr-img {
+        height: 300px;
+    }
+    .first-strip,
+    .second-strip {
+        bottom: -150px;
+    }
+    .strip-content-tech {
+        font-size: 1rem;
+    }
+    .strip-content-syth,
+    .des,
+    .strip-content-evo,
+    .strip-content-eth {
+        font-size: 1.2rem;
+    }
+    .ai-tech,
+    .synth,
+    .pink,
+    .evo,
+    .eth {
+        height: 40px;
+    }
+
+    .home-2-section,
+    .home-section-3 {
+        padding: 3rem 1rem;
+    }
+    .header-right {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header-right-text-h {
+        font-size: 2.5rem;
+        padding: 0.5rem;
+    }
+
+    .happy-cust {
+        font-size: 1.5rem;
+    }
+    .hlp-degn {
+        font-size: 0.9rem;
+    }
+
+    .section-3-header-h,
+    .section-3-text-header {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    .section-3-text-main {
+        font-size: 1rem;
+    }
+    .PixelAlchemy {
+        font-size: 1.2rem;
+    }
 }
